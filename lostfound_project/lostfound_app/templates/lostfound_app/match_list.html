@@ -1,0 +1,19 @@
+{% extends 'lostfound_app/base.html' %}
+
+{% block content %}
+<h2 class="page-title">Matched Items</h2>
+
+<div class="item-grid">
+    {% for match in matched_items %}
+    <div class="item-card">
+        <h3>Possible Match</h3>
+        <p><strong>Lost Item:</strong> {{ match.lost_item.item_name }}</p>
+        <p><strong>Found Item:</strong> {{ match.found_item.item_name }}</p>
+        <p><strong>Lost Category:</strong> {{ match.lost_item.category }}</p>
+        <p><strong>Found Category:</strong> {{ match.found_item.category }}</p>
+    </div>
+    {% empty %}
+    <p>No matches found.</p>
+    {% endfor %}
+</div>
+{% endblock %}

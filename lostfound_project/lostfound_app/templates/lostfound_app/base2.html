@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'lostfound_app/css/style1.css' %}">
+    <style>
+      /* Admin Layout */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: #2d4a27;
+    color: #eef4eb;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    color: #a3c98a;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+}
+
+.sidebar a {
+    display: block;
+    color: #d6eacd;
+    text-decoration: none;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar a:hover {
+    background: #3d6135;
+    color: #eef4eb;
+}
+
+/* Main content */
+.admin-main {
+    flex: 1;
+    padding: 25px;
+    background: #f4f7f2;
+}
+
+/* Top bar */
+.admin-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    background: #ffffff;
+    border: 1px solid #d4e4ce;
+    border-radius: 12px;
+    padding: 14px 20px;
+}
+
+.admin-topbar h3 {
+    color: #1e3a1a;
+    font-weight: 600;
+}
+
+.admin-user {
+    font-weight: 500;
+    font-size: 14px;
+    color: #2d4a27;
+    background: #e8f2e3;
+    border: 1px solid #c4ddb9;
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+    </style>
+</head>
+<body>
+
+<div class="admin-container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+
+        <a href="{% url 'dashboard_home' %}">Dashboard</a>
+        <a href="{% url 'dashboard_lost_items' %}">Lost Items</a>
+        <a href="{% url 'dashboard_found_items' %}">Found Items</a>
+        <a href="{% url 'dashboard_match_items' %}">Matches</a>
+        <a href="{% url 'dashboard_claim_requests' %}">Claim Requests</a>
+        <a href="{% url 'dashboard_approved_claims' %}">Approved Claims</a>
+
+        <hr>
+
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+
+        <!-- Top bar -->
+        <div class="admin-topbar">
+            <h3>Admin Dashboard</h3>
+            <div class="admin-user">
+                👤 {{ user.username }}
+            </div>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'lostfound_app/base.html' %}
+
+{% block content %}
+<h2 class="page-title">Approved Claims</h2>
+
+<div class="item-grid">
+    {% for claim in approved_requests %}
+    <div class="item-card">
+
+        <h3>{{ claim.lost_item.item_name }}</h3>
+
+        <p><strong>Status:</strong> ✅ Approved</p>
+
+        <hr>
+
+        <h4>Contact Details</h4>
+        <p><strong>Owner:</strong> {{ claim.lost_item.contact_name }}</p>
+        <p><strong>Email:</strong> {{ claim.lost_item.contact_email }}</p>
+
+        <hr>
+
+        <h4>Handover Instructions</h4>
+        <p style="color:green;">
+            {{ claim.handover_note|default:"Please contact the owner." }}
+        </p>
+
+    </div>
+    {% empty %}
+    <p>No approved claims.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'lostfound_app/base.html' %}
+
+{% block content %}
+<h2 class="page-title">Found Items</h2>
+
+<div class="item-grid">
+    {% for item in found_items %}
+    <div class="item-card">
+        {% if item.image %}
+            <img src="{{ item.image.url }}" alt="{{ item.item_name }}">
+        {% endif %}
+        <h3>{{ item.item_name }}</h3>
+        <p><strong>Description:</strong> {{ item.description }}</p>
+        <p><strong>Category:</strong> {{ item.category }}</p>
+        <p><strong>Location:</strong> {{ item.location }}</p>
+        <p><strong>Date:</strong> {{ item.found_date }}</p>
+    </div>
+    {% empty %}
+    <p>No found items available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

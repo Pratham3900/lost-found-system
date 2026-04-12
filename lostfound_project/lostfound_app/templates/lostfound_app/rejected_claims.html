@@ -1,0 +1,23 @@
+{% extends 'lostfound_app/base.html' %}
+
+{% block content %}
+<h2 class="page-title">Rejected Claims</h2>
+
+<div class="item-grid">
+    {% for claim in rejected_requests %}
+    <div class="item-card">
+
+        <h3>{{ claim.lost_item.item_name }}</h3>
+
+        <p><strong>Status:</strong> ❌ Rejected</p>
+
+        <p style="color:red;">
+            Your claim was not approved. Please check your proof or try again.
+        </p>
+
+    </div>
+    {% empty %}
+    <p>No rejected claims.</p>
+    {% endfor %}
+</div>
+{% endblock %}

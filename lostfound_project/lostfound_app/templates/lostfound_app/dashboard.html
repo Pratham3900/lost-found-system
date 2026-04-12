@@ -1,0 +1,71 @@
+{% extends 'lostfound_app/base2.html' %}
+
+{% block content %}
+<h2 class="page-title">Admin Dashboard</h2>
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <h3>Total Lost</h3>
+        <p>{{ total_lost }}</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Total Found</h3>
+        <p>{{ total_found }}</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Total Claims</h3>
+        <p>{{ total_claims }}</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Pending</h3>
+        <p>{{ pending_claims }}</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Approved</h3>
+        <p>{{ approved_claims }}</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Rejected</h3>
+        <p>{{ rejected_claims }}</p>
+    </div>
+</div>
+
+<br><br>
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <h3>Manage Lost Items</h3>
+        <p>View all reported lost items with owner details.</p>
+        <a href="{% url 'dashboard_lost_items' %}" class="btn btn-primary">Open</a>
+    </div>
+
+    <div class="feature-card">
+        <h3>Manage Found Items</h3>
+        <p>View all found item submissions with finder details.</p>
+        <a href="{% url 'dashboard_found_items' %}" class="btn btn-primary">Open</a>
+    </div>
+
+    <div class="feature-card">
+        <h3>Manage Matches</h3>
+        <p>Check possible matches between lost and found items.</p>
+        <a href="{% url 'dashboard_match_items' %}" class="btn btn-primary">Open</a>
+    </div>
+
+    <div class="feature-card">
+        <h3>Manage Claims</h3>
+        <p>Approve or reject user claim requests.</p>
+        <a href="{% url 'dashboard_claim_requests' %}" class="btn btn-primary">Open</a>
+    </div>
+
+    <div class="feature-card">
+        <h3>Approved Claims</h3>
+        <p>View all approved claims and contact flow details.</p>
+       <a href="{% url 'dashboard_approved_claims' %}" class="btn btn-primary">Open</a>
+    </div>
+</div>
+{% endblock %}

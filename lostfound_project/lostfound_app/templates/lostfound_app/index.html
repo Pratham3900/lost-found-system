@@ -1,0 +1,51 @@
+{% extends 'lostfound_app/base.html' %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-text">
+        <h1>Lost Something on Campus?</h1>
+        <p>
+            Report lost items, submit found items, and match belongings quickly
+            through our smart college campus platform.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{% url 'report_lost' %}" class="btn btn-primary">Report Lost Item</a>
+            <a href="{% url 'report_found' %}" class="btn btn-secondary">Submit Found Item</a>
+        </div>
+    </div>
+
+    <div class="hero-card">
+        <h3>Why Use This System?</h3>
+        <ul>
+            <li>Easy lost item reporting</li>
+            <li>Found item submission with image</li>
+            <li>Smart item matching</li>
+            <li>Claim verification support</li>
+            <li>Campus-friendly design</li>
+        </ul>
+    </div>
+</section>
+
+<section class="feature-grid">
+    <div class="feature-card">
+        <h3>Lost Reporting</h3>
+        <p>Users can report missing items with description, location and image.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Found Submission</h3>
+        <p>Found items can be uploaded so real owners can identify them faster.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Smart Matching</h3>
+        <p>System compares lost and found data to show possible matches.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Claim Verification</h3>
+        <p>Users can submit proof details before claiming an item.</p>
+    </div>
+</section>
+{% endblock %}

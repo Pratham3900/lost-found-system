@@ -1,0 +1,23 @@
+{% extends 'lostfound_app/base2.html' %}
+
+{% block content %}
+<h2>Approve Claim</h2>
+
+<div class="form-card">
+    <h3>{{ claim.lost_item.item_name }}</h3>
+
+    <p><strong>Claimant:</strong> {{ claim.claimant_name }}</p>
+    <p><strong>Proof:</strong> {{ claim.proof_details }}</p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Handover Instructions:</label>
+        <textarea name="handover_note" placeholder="e.g. Collect from admin office at 2 PM"></textarea>
+
+        <br><br>
+
+        <button type="submit" class="btn btn-primary">Confirm Approval</button>
+    </form>
+</div>
+{% endblock %}

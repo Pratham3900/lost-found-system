@@ -1,0 +1,16 @@
+{% extends 'lostfound_app/base.html' %}
+
+{% block content %}
+<h2 class="page-title">Notifications</h2>
+
+<div class="notification-box">
+    {% for n in notifications %}
+        <div class="notification-card">
+            <p>{{ n.message }}</p>
+            <small>{{ n.created_at }}</small>
+        </div>
+    {% empty %}
+        <p>No notifications available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

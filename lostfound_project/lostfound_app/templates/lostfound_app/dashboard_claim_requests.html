@@ -1,0 +1,23 @@
+{% extends 'lostfound_app/base2.html' %}
+
+{% block content %}
+<h2 class="page-title">Claim Requests</h2>
+
+<div class="item-grid">
+    {% for claim in claim_requests %}
+    <div class="item-card">
+        <h3>{{ claim.lost_item.item_name }}</h3>
+
+        <p><strong>Claimant:</strong> {{ claim.claimant_name }}</p>
+        <p><strong>Email:</strong> {{ claim.claimant_email }}</p>
+        <p><strong>Proof:</strong> {{ claim.proof_details }}</p>
+        <p><strong>Status:</strong> {{ claim.claim_status }}</p>
+
+        {% if claim.claim_status == "Pending" %}
+           <a href="{% url 'approve_claim' claim.id %}" class="btn btn-primary">Approve</a>
+            <a href="{% url 'reject_claim' claim.id %}" class="btn btn-secondary">Reject</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

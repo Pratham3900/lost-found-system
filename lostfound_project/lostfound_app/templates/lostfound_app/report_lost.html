@@ -1,0 +1,12 @@
+{% extends 'lostfound_app/base.html' %}
+
+{% block content %}
+<div class="form-card">
+    <h2>Report Lost Item</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit Lost Item</button>
+    </form>
+</div>
+{% endblock %}
