@@ -11,5 +11,3 @@ db.sqlite3
 # Media files (user uploads)
 media/
 
-# OS files
-.DS_Store
