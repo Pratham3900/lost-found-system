@@ -111,6 +111,33 @@ Make sure the following are installed on your system:
 - VS Code (or any code editor)
 
 ---
+## 🌐 Live Demo
+
+**Live URL:** https://lost-found-system-vagj.onrender.com
+
+---
+
+## 🔑 Login Information
+
+### 🛠️ Admin Login
+Use the following default credentials to access the admin panel from the same login page:
+
+- **Username:** `admin`
+- **Password:** `1234`
+
+> After admin login, the user will be redirected to the **Admin Dashboard**.
+
+> **Note:** This default admin account was created locally using Django's `createsuperuser` command and included for project demonstration purposes.
+
+---
+
+### 👤 Student / Client Login
+There is **no default student/client username and password**.
+
+Please use the **Register** option in the web application to create a new account, then log in using your registered credentials.
+
+> Student/client users will be redirected to the **User Dashboard** after login.
+
 
 ### Installation
 
